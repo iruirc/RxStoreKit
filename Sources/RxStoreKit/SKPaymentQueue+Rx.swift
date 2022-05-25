@@ -166,13 +166,10 @@ extension Reactive where Base: SKPaymentQueue {
 
                     switch transaction.transactionState {
                     case .purchased:
-                        SKPaymentQueue.default().finishTransaction(transaction)
-
                         observer.onNext(transaction)
                         observer.onCompleted()
 
                     case .failed:
-                        SKPaymentQueue.default().finishTransaction(transaction)
                         if let err = transaction.error {
 
                             observer.onError(err)
@@ -182,7 +179,6 @@ extension Reactive where Base: SKPaymentQueue {
                         }
 
                     case .restored:
-                        SKPaymentQueue.default().finishTransaction(transaction)
                         observer.onNext(transaction)
 
                     default:
