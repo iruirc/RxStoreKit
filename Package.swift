@@ -10,7 +10,7 @@ let package = Package(
         .library(
             name: "RxStoreKit",
             type: .dynamic,
-            targets: ["RxStoreKit"]),
+            targets: ["RxStoreKit"])
     ],
     dependencies: [
         .package(url: "https://github.com/ReactiveX/RxSwift.git", exact: "6.6.0"),
@@ -21,8 +21,7 @@ let package = Package(
         .target(
             name: "RxStoreKit",
             dependencies: [
-                .product(name: "RxSwift", package: "RxSwift"),
-                .product(name: "RxCocoa", package: "RxSwift")
+                .product(name: "RxCocoa-Dynamic", package: "RxSwift"),
             ]),
         .testTarget(
             name: "RxStoreKitTests",
