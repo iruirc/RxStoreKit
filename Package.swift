@@ -13,7 +13,7 @@ let package = Package(
             targets: ["RxStoreKit"])
     ],
     dependencies: [
-        .package(url: "https://github.com/ReactiveX/RxSwift.git", exact: "6.6.0"),
+        .package(url: "https://github.com/iruirc/RxSwift.git", branch: "VSDC"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -21,7 +21,7 @@ let package = Package(
         .target(
             name: "RxStoreKit",
             dependencies: [
-                .product(name: "RxCocoa-Dynamic", package: "RxSwift"),
+                .product(name: "RxAll-Dynamic", package: "RxSwift"),
             ]),
         .testTarget(
             name: "RxStoreKitTests",
